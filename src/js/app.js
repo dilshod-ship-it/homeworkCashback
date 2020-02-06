@@ -28,16 +28,16 @@ const purchases =[
 let cashback = 0;
 
 for (const purchase of purchases) {
-	if(purchase.category == CATEGORY_REGULAR) {
-		cashback = (purchase.amount * regularProcent);
-	}else if(purchase.category == CATEGORY_INCREASE)
+	if(purchase.category === CATEGORY_REGULAR) {
+		cashback += (purchase.amount * regularProcent);
+	}else if(purchase.category === CATEGORY_INCREASE)
 	{
-		cashback = (purchase.amount * increaseProcent);
-	}else if(purchase.amount == CATEGORY_SPECIAL) {
-		cashback = (purchase.amount * specialProcent);
+		cashback += (purchase.amount * increaseProcent);
+	}else if(purchase.amount === CATEGORY_SPECIAL) {
+		cashback += (purchase.amount * specialProcent);
 	}
 
-	if(cashback > cashbackLimit) {
+	if (cashback > cashbackLimit) {
 		cashback = cashbackLimit;
 	}
 }
