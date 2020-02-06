@@ -37,11 +37,13 @@ for (const purchase of purchases) {
 		cashback += (purchase.amount * specialProcent);
 	}
 
+	
+}
+
 	if (cashback > cashbackLimit) {
 		cashback = cashbackLimit;
 	}
-}
-
+	
 console.log(cashback);
 
 
